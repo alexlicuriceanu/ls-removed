@@ -1,3 +1,5 @@
 Citizen.CreateThread(function()
-    LoadWaterFromPath('ls-removed', 'water.xml')
+    SetFogVolumeRenderDisabled(true)
+    LoadWaterFromPath('lsremoved', 'water.xml')
+    SetDeepOceanScaler(0.0)
 end)
