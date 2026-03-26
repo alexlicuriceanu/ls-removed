@@ -8,7 +8,7 @@ version "2.0.0"
 files {
     "*.xml",
     -- "heightmap.dat",
-    -- "popcycle.dat",
+    "popcycle.dat",
     -- "popzone.ipl",
 }
 
@@ -20,3 +20,4 @@ client_scripts {
 this_is_a_map "yes"
 
 data_file "TRAINTRACK_FILE" "traintracks.xml"
+data_file 'POPSCHED_FILE' 'popcycle.dat'

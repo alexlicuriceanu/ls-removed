@@ -22,4 +22,5 @@ Citizen.CreateThread(function()
     end
 
     SetFogVolumeRenderDisabled(true)    -- remove light pollution effects
+    DisableVehicleDistantlights(true)   -- remove vehicle lod lights
 end)
