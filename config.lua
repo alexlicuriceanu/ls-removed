@@ -1,3 +1,3 @@
 config = {}
 
-config.cayo_perico = false
+config.cayo_perico = true

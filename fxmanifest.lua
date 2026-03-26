@@ -6,9 +6,7 @@ author "L1CKS"
 version "2.0.0"
 
 files {
-    "water.xml",
-    "water_ls_cayo.xml",
-    "traintracks.xml",
+    "*.xml",
     -- "heightmap.dat",
     -- "popcycle.dat",
     -- "popzone.ipl",

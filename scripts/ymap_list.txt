@@ -624,8 +624,6 @@ apa_lodlights_small059.ymap
 apa_lodlights_small060.ymap
 apa_lodlights_small061.ymap
 apa_lodlights_small062.ymap
-apa_prologue_distantlights.ymap
-apa_prologue_lodlights.ymap
 apa_smboat_distantlights.ymap
 apa_smboat_lodlights.ymap
 apa_ss1_01.ymap
@@ -1255,6 +1253,7 @@ bkr_id1_rd_strm_4.ymap
 bkr_id1_rd_strm_5.ymap
 bkr_id1_rd_strm_6.ymap
 bkr_id1_rd_strm_7.ymap
+blank.ymap
 bnkheist_apt_dest.ymap
 bnkheist_apt_dest_lod.ymap
 bnkheist_apt_dest_vfx.ymap
@@ -3817,6 +3816,10 @@ gr_heist_yacht2_lod.ymap
 gr_heist_yacht2_lounge.ymap
 gr_heist_yacht2_lounge_lod.ymap
 gr_heist_yacht2_slod.ymap
+h4_yacht.ymap
+h4_yacht_critical_0.ymap
+h4_yacht_long_0.ymap
+h4_yacht_strm_0.ymap
 hei_ap1_01_a.ymap
 hei_ap1_01_a_critical_0.ymap
 hei_ap1_01_a_long_0.ymap
@@ -6980,8 +6983,6 @@ hei_po1_sh2_critical_0.ymap
 hei_po1_sh2_long_0.ymap
 hei_po1_sh2_strm_0.ymap
 hei_po1_sh2_strm_1.ymap
-hei_prologue_distantlights.ymap
-hei_prologue_lodlights.ymap
 hei_sc1_00b.ymap
 hei_sc1_00b_long_0.ymap
 hei_sc1_00b_strm_0.ymap
@@ -9338,8 +9339,6 @@ po1_sh2_strm_0.ymap
 po1_sh2_strm_1.ymap
 post_hiest_unload.ymap
 post_hiest_unload_lod.ymap
-prologue_distantlights.ymap
-prologue_lodlights.ymap
 prop_cheetah_covered.ymap
 prop_entityxf_covered.ymap
 prop_jb700_covered.ymap
