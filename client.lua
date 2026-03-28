@@ -17,6 +17,10 @@ Citizen.CreateThread(function()
     for _, ipl in ipairs(_ls_ipls) do
         if IsIplActive(ipl) then
             RemoveIpl(ipl)
+
+            if config.debug then
+                print("IPL '" .. ipl .. "' was still active after first pass; attempting removal")
+            end
         end
     end
 
