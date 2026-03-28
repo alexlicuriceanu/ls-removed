@@ -1,22 +1,21 @@
+-- function that calls RemoveIpl for each ipl in a list
+-- @param ipls list of ipl names to remove
+-- @return none
+local function RemoveIpls(ipls) 
+    for _, ipl in ipairs(ipls) do
+        RemoveIpl(ipl)
+    end
+end
+
 Citizen.CreateThread(function()
     while not NetworkIsPlayerActive(PlayerId()) do
         Citizen.Wait(100)
     end
 
     -- ### MAIN MAP REMOVAL ###
-    for i, ipl in ipairs(_ls_ipls) do
-        RemoveIpl(ipl)
-    end
-
-    -- second pass for any ipl that may have been reloaded
-    while not NetworkIsPlayerActive(PlayerId()) do
-        Citizen.Wait(0)
-    end
-
-    Citizen.Wait(1000)   -- wait a moment to allow any pending IPL loads to complete
-
-    for _, ipl in ipairs(_ls_ipls) do
-        RemoveIpl(ipl)
+    for _, _ in ipairs(config.passes) do
+        RemoveIpls(_ls_ipls)
+        Citizen.Wait(config.pass_delay)
     end
 
     SetFogVolumeRenderDisabled(true)    -- remove light pollution effects
