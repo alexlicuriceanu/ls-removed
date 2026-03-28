@@ -1,8 +1,4 @@
----@diagnostic disable-next-line: lowercase-global
-config = {}
-
-
-config.ipls = {
+_cayo_ipls = {
     'h4_aa_guns',
     'h4_aa_guns_lod',
     'h4_beach',

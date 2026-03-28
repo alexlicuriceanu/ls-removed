@@ -4,26 +4,74 @@ Citizen.CreateThread(function()
     end
 
     -- ### MAIN MAP REMOVAL ###
-    local batch_size = 100
     for i, ipl in ipairs(_ls_ipls) do
         RemoveIpl(ipl)
-
-        if i % batch_size == 0 then
-            Citizen.Wait(0)
-        end
     end
 
     -- second pass for any ipl that may have been reloaded
-    for _, ipl in ipairs(_ls_ipls) do
-        if IsIplActive(ipl) then
-            RemoveIpl(ipl)
+    while not NetworkIsPlayerActive(PlayerId()) do
+        Citizen.Wait(0)
+    end
 
-            if config.debug then
-                print("IPL '" .. ipl .. "' was still active after first pass; attempting removal")
-            end
-        end
+    Citizen.Wait(1000)   -- wait a moment to allow any pending IPL loads to complete
+
+    for _, ipl in ipairs(_ls_ipls) do
+        RemoveIpl(ipl)
     end
 
     SetFogVolumeRenderDisabled(true)    -- remove light pollution effects
     DisableVehicleDistantlights(true)   -- remove vehicle lod lights
+
+
+    -- ### WATER ###
+    local load_cayo = false
+    if config ~= nil and config.cayo_perico ~= nil then
+        load_cayo = config.cayo_perico
+    end
+
+    if load_cayo then
+        LoadGlobalWaterType(1)  -- important to set this, otherwise LS water tiles will not load
+        SetDeepOceanScaler(0.0)
+        LoadWaterFromPath(GetCurrentResourceName(), 'data/water_ls_cayo.xml')
+    else
+        -- do NOT set any global water type when loading water in the LS bounding box
+        LoadWaterFromPath(GetCurrentResourceName(), 'data/water.xml')
+    end
+
+    -- if the user wants to load the water file from somewhere else
+    if config.use_custom_water and config.custom_water then
+        if config.custom_water.global_water_type then
+            LoadGlobalWaterType(config.custom_water.global_water_type)
+        end
+
+        if config.custom_water.deep_ocean_scaler then
+            SetDeepOceanScaler(config.custom_water.deep_ocean_scaler)
+        end
+
+        if config.custom_water.path and config.custom_water.resource_name then
+            LoadWaterFromPath(config.custom_water.resource_name, config.custom_water.path)
+
+            if config.debug then
+                print(string.format('Loaded water from resource %s, path %s', config.custom_water.resource_name, config.custom_water.path))
+            end
+        end
+    end
+
+
+    -- ### CAYO PERICO LOADING ###
+    if config.cayo_perico then
+        for _, ipl in ipairs(_cayo_ipls) do
+            RequestIpl(ipl)
+        end
+
+        -- misc natives
+        SetAiGlobalPathNodesType(1)
+        LoadGlobalWaterType(1)
+        --SetScenarioGroupEnabled('Heist_Island_Peds', true)
+
+        -- audio stuff
+        SetAudioFlag('PlayerOnDLCHeist4Island', true)
+        SetAmbientZoneListStatePersistent('AZL_DLC_Hei4_Island_Zones', true, true)
+        SetAmbientZoneListStatePersistent('AZL_DLC_Hei4_Island_Disabled_Zones', false, true)
+    end
 end)

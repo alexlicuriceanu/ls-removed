@@ -10,10 +10,13 @@ client_scripts {
     "client.lua",
     "cayo_ipls.lua",
     "client_cayo.lua",
+    "config.lua",
     --"data/traintracks.xml",
+    "data/*.xml",
+    "data/*.dat"
 }
 
 --data_file "TRAINTRACK_FILE" "data/traintracks.xml"
-
+data_file 'POPSCHED_FILE' 'data/popcycle.dat'
 
 
