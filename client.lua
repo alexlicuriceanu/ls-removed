@@ -1,26 +1,22 @@
 Citizen.CreateThread(function()
-
-    -- wait until player loads before swapping water metadata
     while not NetworkIsPlayerActive(PlayerId()) do
         Citizen.Wait(100)
     end
-    
-    Citizen.Wait(1000)
 
-    local load_cayo = false
-    if config ~= nil and config.cayo_perico ~= nil then
-        load_cayo = config.cayo_perico
+    -- main map removal
+    local batch_size = 100
+    for i, ipl in ipairs(ls_ipls) do
+        RemoveIpl(ipl)
+
+        if i % batch_size == 0 then
+            Citizen.Wait(0)
+        end
     end
 
-    if load_cayo then
-        LoadGlobalWaterType(1)  -- important to set this, otherwise LS water tiles will not load
-        SetDeepOceanScaler(0.0)
-        LoadWaterFromPath(GetCurrentResourceName(), 'water_ls_cayo.xml')
-    else
-        -- do NOT set any global water type when loading water in the LS bounding box
-        LoadWaterFromPath(GetCurrentResourceName(), 'water.xml')
+    -- second pass for any ipl that may have been reloaded
+    for _, ipl in ipairs(ls_ipls) do
+        if IsIplActive(ipl) then
+            RemoveIpl(ipl)
+        end
     end
-
-    SetFogVolumeRenderDisabled(true)    -- remove light pollution effects
-    DisableVehicleDistantlights(true)   -- remove vehicle lod lights
 end)
