@@ -6,10 +6,14 @@ description 'Los Santos Removed. Script/Stream version.'
 version '2.0.0'
 
 client_scripts {
-    "ipls.lua",
+    "ls_ipls.lua",
     "client.lua",
-    "client_cayo.lua"
+    "cayo_ipls.lua",
+    "client_cayo.lua",
+    --"data/traintracks.xml",
 }
+
+--data_file "TRAINTRACK_FILE" "data/traintracks.xml"
 
 
 

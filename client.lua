@@ -3,9 +3,9 @@ Citizen.CreateThread(function()
         Citizen.Wait(100)
     end
 
-    -- main map removal
+    -- ### MAIN MAP REMOVAL ###
     local batch_size = 100
-    for i, ipl in ipairs(ls_ipls) do
+    for i, ipl in ipairs(_ls_ipls) do
         RemoveIpl(ipl)
 
         if i % batch_size == 0 then
@@ -14,9 +14,12 @@ Citizen.CreateThread(function()
     end
 
     -- second pass for any ipl that may have been reloaded
-    for _, ipl in ipairs(ls_ipls) do
+    for _, ipl in ipairs(_ls_ipls) do
         if IsIplActive(ipl) then
             RemoveIpl(ipl)
         end
     end
+
+    SetFogVolumeRenderDisabled(true)    -- remove light pollution effects
+    DisableVehicleDistantlights(true)   -- remove vehicle lod lights
 end)

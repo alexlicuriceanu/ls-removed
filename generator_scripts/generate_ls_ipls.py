@@ -1,5 +1,5 @@
-input_file = 'ymaps_list.txt'
-output_file = 'ipls.lua'
+input_file = './ymaps_list.txt'
+output_file = './ls_ipls.lua'
 
 def get_lod_rank(name):
     name_lower = name.lower()
@@ -16,7 +16,7 @@ with open(input_file, 'r') as f:
 ymap_names.sort(key=get_lod_rank)
 
 with open(output_file, 'w') as f:   
-    f.write("ls_ipls = {\n")
+    f.write("_ls_ipls = {\n")
     
     for i, name in enumerate(ymap_names):
         if i == len(ymap_names) - 1:
