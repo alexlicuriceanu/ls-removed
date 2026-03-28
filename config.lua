@@ -7,5 +7,5 @@ config.custom_water = {
     resource_name = GetCurrentResourceName(), path = 'data/water.xml', deep_ocean_scaler = 0.0, global_water_type = 1
 }
 
-config.passes = 2
+config.passes = 3
 config.pass_delay = 1000

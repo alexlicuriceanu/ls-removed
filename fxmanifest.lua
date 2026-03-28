@@ -9,7 +9,6 @@ client_scripts {
     "ls_ipls.lua",
     "client.lua",
     "cayo_ipls.lua",
-    "client_cayo.lua",
     "config.lua",
     --"data/traintracks.xml",
     "data/*.xml",

@@ -13,7 +13,10 @@ Citizen.CreateThread(function()
     end
 
     -- ### MAIN MAP REMOVAL ###
-    for _, _ in ipairs(config.passes) do
+    for i = 1, config.passes do
+        if config.debug then
+            print(string.format('Removing LS, pass %d/%d...', i, config.passes))
+        end
         RemoveIpls(_ls_ipls)
         Citizen.Wait(config.pass_delay)
     end
@@ -66,6 +69,7 @@ Citizen.CreateThread(function()
         -- misc natives
         SetAiGlobalPathNodesType(1)
         LoadGlobalWaterType(1)
+        SetZoneEnabled(GetZoneFromNameId("PrLog"), false)
         --SetScenarioGroupEnabled('Heist_Island_Peds', true)
 
         -- audio stuff
