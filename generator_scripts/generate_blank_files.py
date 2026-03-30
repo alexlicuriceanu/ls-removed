@@ -77,9 +77,9 @@ def generate_blank_files(list_file, blank_template, output_dir):
     return count
 
 if __name__ == "__main__":
-    #clean_list(ybn_paths, ybn_list)
-    #ybn_count = generate_blank_files(ybn_list, blank_ybn, ybn_output_dir)
-    #print(f"Generated {ybn_count} blank YBN files in '{ybn_output_dir}'\n")
+    clean_list(ybn_paths, ybn_list)
+    ybn_count = generate_blank_files(ybn_list, blank_ybn, ybn_output_dir)
+    print(f"Generated {ybn_count} blank YBN files in '{ybn_output_dir}'\n")
 
     clean_list(ynd_paths, ynd_list)
     ynd_count = generate_blank_files(ynd_list, blank_ynd, ynd_output_dir)
