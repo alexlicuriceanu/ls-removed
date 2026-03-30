@@ -8,9 +8,9 @@ local function RemoveIpls(ipls)
 end
 
 Citizen.CreateThread(function()
-    while not NetworkIsPlayerActive(PlayerId()) do
-        Citizen.Wait(100)
-    end
+    SetFogVolumeRenderDisabled(true)    -- remove light pollution effects
+    DisableVehicleDistantlights(true)   -- remove vehicle lod lights
+    DisableWorldhorizonRendering(true)   -- disable farlods rendering
 
     -- ### WATER ###
     if config.custom_water_name and config.custom_water then
@@ -31,6 +31,19 @@ Citizen.CreateThread(function()
         end
     end
 
+    -- handle water fog textures
+    RequestStreamedTextureDict("waterfog-0")
+    while not HasStreamedTextureDictLoaded("waterfog-0") do
+        Citizen.Wait(0)
+    end
+
+    AddReplaceTexture("platform:/textures/graphics", "waterfog", "waterfog-0", "waterfog-0")
+	
+    -- wait until player is active before removing ipls
+    while not NetworkIsPlayerActive(PlayerId()) do
+        Citizen.Wait(100)
+    end
+
     -- ### MAIN MAP REMOVAL ###
     for i = 1, config.passes do
         if config.debug then
@@ -40,10 +53,6 @@ Citizen.CreateThread(function()
         RemoveIpls(_ls_ipls)
         Citizen.Wait(config.pass_delay)
     end
-
-    SetFogVolumeRenderDisabled(true)    -- remove light pollution effects
-    DisableVehicleDistantlights(true)   -- remove vehicle lod lights
-    DisableWorldhorizonRendering(true)   -- disable farlods rendering
 
     -- ### CAYO PERICO LOADING ###
     -- if config.cayo_perico then
