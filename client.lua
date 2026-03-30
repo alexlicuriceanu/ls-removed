@@ -50,7 +50,7 @@ Citizen.CreateThread(function()
             print(string.format('Removing Los Santos IPLs, pass %d/%d...', i, config.passes))
         end
         
-        RemoveIpls(_ls_ipls)
+        RemoveIpls(_ipls)
         Citizen.Wait(config.pass_delay)
     end
 end)

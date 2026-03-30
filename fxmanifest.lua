@@ -6,7 +6,7 @@ description 'Los Santos Removed. Script/Stream version.'
 version '2.0.0'
 
 client_scripts {
-    "ls_ipls.lua",
+    "ipls.lua",
     "client.lua",
     "config.lua",
     "data/*.xml",
