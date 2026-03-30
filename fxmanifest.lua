@@ -12,10 +12,10 @@ client_scripts {
     "config.lua",
     --"data/traintracks.xml",
     "data/*.xml",
-    "data/*.dat"
+    "data/*.dat",
+    "data/*.ymt"
 }
 
 --data_file "TRAINTRACK_FILE" "data/traintracks.xml"
 data_file 'POPSCHED_FILE' 'data/popcycle.dat'
-
-
+data_file 'FIVEM_LOVES_YOU_341B23A2F0E0F131' 'data/popgroups.ymt'

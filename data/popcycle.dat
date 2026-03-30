@@ -2318,18 +2318,18 @@ NET_ISLAND_HEIST
 // Weekday
 //
 //  #Peds  #Scenario #Cars  #prkdcrs #lowprkdcrs    PercCopCars PercCopPed  MaxScenPeds MaxScenVehs MaxPreAssignedParked
-      0     0        0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0        0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0        0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0        0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0        0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0       0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0       0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0       0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0       0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0        0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0        0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
-      0     0        0      0         0           0           0           0          0                   0           peds  ISLAND_HEIST_PEDS 0  cars  VEH_ISLAND_HEIST 0
+      04     30        60      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      02     20        60      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      04     20        60      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      16     40        80      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      16     50        80      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      18     50       100      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      18     50       100      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      18     50       100      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      18     50       100      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      18     50        80      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      16     50        80      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
+      16     30        80      20         40           1           0           8          5                   10           peds  ISLAND_HEIST_PEDS 100  cars  VEH_ISLAND_HEIST 100
 END_POP_SCHEDULE
 
 ////////////////////////////////////////////////////////////////////

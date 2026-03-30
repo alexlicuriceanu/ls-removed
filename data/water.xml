@@ -2,10 +2,10 @@
 <WaterData>
 	<WaterQuads>
 		<Item>
-			<minX value="-4000" />
-			<maxX value="4500" />
-			<minY value="-4000" />
-			<maxY value="8000" />
+			<minX value="-24000" />
+			<maxX value="24500" />
+			<minY value="-24000" />
+			<maxY value="28000" />
 			<Type value="0" />
 			<IsInvisible value="false" />
 			<HasLimitedDepth value="false" />
