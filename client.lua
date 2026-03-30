@@ -53,22 +53,4 @@ Citizen.CreateThread(function()
         RemoveIpls(_ls_ipls)
         Citizen.Wait(config.pass_delay)
     end
-
-    -- ### CAYO PERICO LOADING ###
-    -- if config.cayo_perico then
-    --     for _, ipl in ipairs(_cayo_ipls) do
-    --         RequestIpl(ipl)
-    --     end
-
-    --     -- misc natives
-    --     SetAiGlobalPathNodesType(1)
-    --     LoadGlobalWaterType(1)
-    --     SetZoneEnabled(GetZoneFromNameId("PrLog"), false)
-    --     SetScenarioGroupEnabled('Heist_Island_Peds', true)
-
-    --     -- audio stuff
-    --     SetAudioFlag('PlayerOnDLCHeist4Island', true)
-    --     SetAmbientZoneListStatePersistent('AZL_DLC_Hei4_Island_Zones', true, true)
-    --     SetAmbientZoneListStatePersistent('AZL_DLC_Hei4_Island_Disabled_Zones', false, true)
-    -- end
 end)

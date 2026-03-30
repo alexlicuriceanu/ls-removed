@@ -8,9 +8,7 @@ version '2.0.0'
 client_scripts {
     "ls_ipls.lua",
     "client.lua",
-    "cayo_ipls.lua",
     "config.lua",
-    --"data/traintracks.xml",
     "data/*.xml",
     "data/*.dat",
     "data/*.ymt"
