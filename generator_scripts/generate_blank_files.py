@@ -11,6 +11,11 @@ ynd_output_dir = './stream/ynd'
 ynd_paths = './ynd_paths.txt'
 ynd_list = './ynd_list.txt'
 
+blank_ymap = './blank.ymap'
+ymap_output_dir = './stream/ymap'
+ymap_paths = './ymap_paths.txt'
+ymap_list = './ymap_list.txt'
+
 def clean_list(input_paths_file, output_list_file):
     if not os.path.exists(input_paths_file):
         print(f"Error: Could not find '{input_paths_file}'")
@@ -66,6 +71,10 @@ def generate_blank_files(list_file, blank_template, output_dir):
                 if not file_name:
                     continue
                     
+                # if file is a ymap and contains "milo" skip
+                if file_name.endswith('.ymap') and 'milo' in file_name.lower():
+                    continue
+                    
                 new_file_path = os.path.join(output_dir, file_name)
                 
                 shutil.copy2(blank_template, new_file_path)
@@ -84,3 +93,7 @@ if __name__ == "__main__":
     clean_list(ynd_paths, ynd_list)
     ynd_count = generate_blank_files(ynd_list, blank_ynd, ynd_output_dir)
     print(f"Generated {ynd_count} blank YND files in '{ynd_output_dir}'")
+
+    # clean_list(ymap_paths, ymap_list)
+    # ymap_count = generate_blank_files(ymap_list, blank_ymap, ymap_output_dir)
+    # print(f"Generated {ymap_count} blank YMAP files in '{ymap_output_dir}'")

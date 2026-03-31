@@ -19,5 +19,5 @@ config.custom_water = {
     --}
 }
 
-config.passes = 3
-config.pass_delay = 1000
+config.passes = 3   -- unused
+config.pass_delay = 1000    -- unused
