@@ -1,4 +1,4 @@
-# Cayo Perico Loader - Ultimate Edition. Lightweight, Customizable, Upgraded
+# Los Santos Removed - Empty game map, compatible with IPL loaders
 
 ![image](images/banner.png)
 
