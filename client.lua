@@ -66,4 +66,6 @@ Citizen.CreateThread(function()
     if config.debug then
         print('Replaced waterfog texture')
     end
+
+    SetStreamedTextureDictAsNoLongerNeeded("waterfog-0")
 end)
