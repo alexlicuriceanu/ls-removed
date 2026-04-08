@@ -31,14 +31,6 @@ Citizen.CreateThread(function()
         end
     end
 
-    -- handle water fog textures
-    RequestStreamedTextureDict("waterfog-0")
-    while not HasStreamedTextureDictLoaded("waterfog-0") do
-        Citizen.Wait(0)
-    end
-
-    AddReplaceTexture("platform:/textures/graphics", "waterfog", "waterfog-0", "waterfog-0")
-	
     -- wait until player is active before removing ipls
     while not NetworkIsPlayerActive(PlayerId()) do
         Citizen.Wait(100)
@@ -52,5 +44,26 @@ Citizen.CreateThread(function()
         
         RemoveIpls(_ipls)
         Citizen.Wait(config.pass_delay)
+    end
+end)
+
+
+-- handle water fog textures
+Citizen.CreateThread(function()
+    local id = PlayerId()
+
+    while not NetworkIsPlayerActive(id) do
+        Citizen.Wait(0)
+    end
+
+    RequestStreamedTextureDict("waterfog-0")
+    while not HasStreamedTextureDictLoaded("waterfog-0") do
+        Citizen.Wait(0)
+    end
+
+    AddReplaceTexture("platform:/textures/graphics", "waterfog", "waterfog-0", "waterfog-0")
+    
+    if config.debug then
+        print('Replaced waterfog texture')
     end
 end)
