@@ -7,10 +7,79 @@ local function RemoveIpls(ipls)
     end
 end
 
+local function DisableBasegameScenarios()
+    local scenarios = {
+        'WORLD_VEHICLE_ATTRACTOR',
+        'WORLD_VEHICLE_AMBULANCE',
+        'WORLD_VEHICLE_BICYCLE_BMX',
+        'WORLD_VEHICLE_BICYCLE_BMX_BALLAS',
+        'WORLD_VEHICLE_BICYCLE_BMX_FAMILY',
+        'WORLD_VEHICLE_BICYCLE_BMX_HARMONY',
+        'WORLD_VEHICLE_BICYCLE_BMX_VAGOS',
+        'WORLD_VEHICLE_BICYCLE_MOUNTAIN',
+        'WORLD_VEHICLE_BICYCLE_ROAD',
+        'WORLD_VEHICLE_BIKE_OFF_ROAD_RACE',
+        'WORLD_VEHICLE_BIKER',
+        'WORLD_VEHICLE_BOAT_IDLE',
+        'WORLD_VEHICLE_BOAT_IDLE_ALAMO',
+        'WORLD_VEHICLE_BOAT_IDLE_MARQUIS',
+        'WORLD_VEHICLE_BOAT_IDLE_MARQUIS',
+        'WORLD_VEHICLE_BROKEN_DOWN',
+        'WORLD_VEHICLE_BUSINESSMEN',
+        'WORLD_VEHICLE_HELI_LIFEGUARD',
+        'WORLD_VEHICLE_CLUCKIN_BELL_TRAILER',
+        'WORLD_VEHICLE_CONSTRUCTION_SOLO',
+        'WORLD_VEHICLE_CONSTRUCTION_PASSENGERS',
+        'WORLD_VEHICLE_DRIVE_PASSENGERS',
+        'WORLD_VEHICLE_DRIVE_PASSENGERS_LIMITED',
+        'WORLD_VEHICLE_DRIVE_SOLO',
+        'WORLD_VEHICLE_FARM_WORKER',
+        'WORLD_VEHICLE_FIRE_TRUCK',
+        'WORLD_VEHICLE_EMPTY',
+        'WORLD_VEHICLE_MARIACHI',
+        'WORLD_VEHICLE_MECHANIC',
+        'WORLD_VEHICLE_MILITARY_PLANES_BIG',
+        'WORLD_VEHICLE_MILITARY_PLANES_SMALL',
+        'WORLD_VEHICLE_PARK_PARALLEL',
+        'WORLD_VEHICLE_PARK_PERPENDICULAR_NOSE_IN',
+        'WORLD_VEHICLE_PASSENGER_EXIT',
+        'WORLD_VEHICLE_POLICE_BIKE',
+        'WORLD_VEHICLE_POLICE_CAR',
+        'WORLD_VEHICLE_POLICE',
+        'WORLD_VEHICLE_POLICE_NEXT_TO_CAR',
+        'WORLD_VEHICLE_QUARRY',
+        'WORLD_VEHICLE_SALTON',
+        'WORLD_VEHICLE_SALTON_DIRT_BIKE',
+        'WORLD_VEHICLE_SECURITY_CAR',
+        'WORLD_VEHICLE_STREETRACE',
+        'WORLD_VEHICLE_TOURBUS',
+        'WORLD_VEHICLE_TOURIST',
+        'WORLD_VEHICLE_TANDL',
+        'WORLD_VEHICLE_TRACTOR',
+        'WORLD_VEHICLE_TRACTOR_BEACH',
+        'WORLD_VEHICLE_TRUCK_LOGS',
+        'WORLD_VEHICLE_TRUCKS_TRAILERS',
+        'WORLD_VEHICLE_DISTANT_EMPTY_GROUND'
+    }
+
+    for i, v in ipairs(scenarios) do
+        SetScenarioTypeEnabled(v, false)
+    end
+end
+
+
 Citizen.CreateThread(function()
     SetFogVolumeRenderDisabled(true)    -- remove light pollution effects
     DisableVehicleDistantlights(true)   -- remove vehicle lod lights
     DisableWorldhorizonRendering(true)   -- disable farlods rendering
+    
+    -- ### Audio ###
+    SetStaticEmitterEnabled("LOS_SANTOS_VANILLA_UNICORN_01_STAGE", false)
+    SetStaticEmitterEnabled("LOS_SANTOS_VANILLA_UNICORN_02_MAIN_ROOM", false)
+    SetStaticEmitterEnabled("LOS_SANTOS_VANILLA_UNICORN_03_BACK_ROOM", false)
+
+    -- ### Scenarios ###
+    DisableBasegameScenarios()
 
     -- ### WATER ###
     if config.custom_water_name and config.custom_water then
@@ -25,26 +94,20 @@ Citizen.CreateThread(function()
         if custom_water.deep_ocean_scaler then
             SetDeepOceanScaler(custom_water.deep_ocean_scaler * 1.0)
         end
-
-        if config.debug then
-            print(string.format('Loaded custom water %s from resource %s, path %s', custom_water_name, custom_water.resource_name, custom_water.path))
-        end
     end
 
     -- wait until player is active before removing ipls
-    while not NetworkIsPlayerActive(PlayerId()) do
+    local id = PlayerId()
+
+    while not NetworkIsPlayerActive(id) do
         Citizen.Wait(100)
     end
 
     -- ### MAIN MAP REMOVAL ###
-    -- for i = 1, config.passes do
-    --     if config.debug then
-    --         print(string.format('Removing Los Santos IPLs, pass %d/%d...', i, config.passes))
-    --     end
-        
-    --     RemoveIpls(_ipls)
-    --     Citizen.Wait(config.pass_delay)
-    -- end
+    for i = 1, config.passes do        
+        RemoveIpls(_ipls)
+        Citizen.Wait(config.pass_delay)
+    end
 end)
 
 
@@ -63,8 +126,4 @@ Citizen.CreateThread(function()
 
     AddReplaceTexture("platform:/textures/graphics", "waterfog", "waterfog-0", "waterfog-0")
     SetStreamedTextureDictAsNoLongerNeeded("waterfog-0")
-
-    if config.debug then
-        print('Replaced waterfog texture')
-    end
 end)
