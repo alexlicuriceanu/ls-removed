@@ -1,7 +1,7 @@
 config = {}
 config.debug = true
 
-config.custom_water_name = 'ls_water'   -- set to nil to disable, or set to a key in config.custom_water to load a custom water file
+config.custom_water_name = 'cayo_water'   -- set to nil to disable, or set to a key in config.custom_water to load a custom water file
 config.custom_water = {
     ['ls_water'] = {
         resource_name = GetCurrentResourceName(), path = 'data/water.xml'

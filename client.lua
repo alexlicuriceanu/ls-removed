@@ -37,14 +37,14 @@ Citizen.CreateThread(function()
     end
 
     -- ### MAIN MAP REMOVAL ###
-    for i = 1, config.passes do
-        if config.debug then
-            print(string.format('Removing Los Santos IPLs, pass %d/%d...', i, config.passes))
-        end
+    -- for i = 1, config.passes do
+    --     if config.debug then
+    --         print(string.format('Removing Los Santos IPLs, pass %d/%d...', i, config.passes))
+    --     end
         
-        RemoveIpls(_ipls)
-        Citizen.Wait(config.pass_delay)
-    end
+    --     RemoveIpls(_ipls)
+    --     Citizen.Wait(config.pass_delay)
+    -- end
 end)
 
 
@@ -62,10 +62,9 @@ Citizen.CreateThread(function()
     end
 
     AddReplaceTexture("platform:/textures/graphics", "waterfog", "waterfog-0", "waterfog-0")
-    
+    SetStreamedTextureDictAsNoLongerNeeded("waterfog-0")
+
     if config.debug then
         print('Replaced waterfog texture')
     end
-
-    SetStreamedTextureDictAsNoLongerNeeded("waterfog-0")
 end)

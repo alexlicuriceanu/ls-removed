@@ -71,10 +71,6 @@ def generate_blank_files(list_file, blank_template, output_dir):
                 if not file_name:
                     continue
                     
-                # if file is a ymap and contains "milo" skip
-                if file_name.endswith('.ymap') and 'milo' in file_name.lower():
-                    continue
-                    
                 new_file_path = os.path.join(output_dir, file_name)
                 
                 shutil.copy2(blank_template, new_file_path)
@@ -94,6 +90,6 @@ if __name__ == "__main__":
     ynd_count = generate_blank_files(ynd_list, blank_ynd, ynd_output_dir)
     print(f"Generated {ynd_count} blank YND files in '{ynd_output_dir}'")
 
-    # clean_list(ymap_paths, ymap_list)
-    # ymap_count = generate_blank_files(ymap_list, blank_ymap, ymap_output_dir)
-    # print(f"Generated {ymap_count} blank YMAP files in '{ymap_output_dir}'")
+    clean_list(ymap_paths, ymap_list)
+    ymap_count = generate_blank_files(ymap_list, blank_ymap, ymap_output_dir)
+    print(f"Generated {ymap_count} blank YMAP files in '{ymap_output_dir}'")
