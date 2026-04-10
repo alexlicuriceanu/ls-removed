@@ -3625,14 +3625,14 @@ D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist
 D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist3\dlc.rpf\x64\levels\gta5\interiors\dlc_int_12_ch.rpf\ch_mph3_carpark_int.ybn
 D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist3\dlc.rpf\x64\levels\gta5\interiors\dlc_int_12_ch.rpf\hi@ch_mph3_carpark_int.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_ch2_mansion_final_1.ybn
---D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_h4_yacht_0.ybn
+D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_h4_yacht_0.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_islandx_yacht_01_1.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_islandx_yacht_01_2.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_islandx_yacht_02_1.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_islandx_yacht_02_2.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_islandx_yacht_03_1.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\h4_islandx_yacht_03_2.ybn
---D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\hi@h4_h4_yacht_0.ybn
+D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\_cityw\additions_01\h4_yacht.rpf\hi@h4_h4_yacht_0.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\interiors\dlc_int_01_h4.rpf\h4_int_sub_h4.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\interiors\dlc_int_01_h4.rpf\hi@h4_int_sub_h4.ybn
 --D:\Steam Library\steamapps\common\Grand Theft Auto V\update\x64\dlcpacks\mpheist4\dlc1.rpf\x64\levels\gta5\interiors\dlc_int_02_h4.rpf\h4_dlc_int_02_h4.ybn
