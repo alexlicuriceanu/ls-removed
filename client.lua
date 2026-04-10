@@ -80,6 +80,7 @@ Citizen.CreateThread(function()
 
     -- ### Scenarios ###
     DisableBasegameScenarios()
+    AddScenarioBlockingArea(895.0, 172.12, 68.1, 1001.47, -121.47, 144.8, true, true, true, true)   -- cayo perico casino scenarios
 
     -- ### WATER ###
     if config.custom_water_name and config.custom_water then
@@ -91,6 +92,7 @@ Citizen.CreateThread(function()
         if custom_water.global_water_type then
             LoadGlobalWaterType(custom_water.global_water_type)
         end
+
         if custom_water.deep_ocean_scaler then
             SetDeepOceanScaler(custom_water.deep_ocean_scaler * 1.0)
         end
